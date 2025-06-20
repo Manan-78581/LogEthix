@@ -25,24 +25,26 @@
 
 ---
 
-## 🗂️ System Architecture
+## 🧩 System Architecture
 
 ```mermaid
-graph TD
-  A[User Form (Frontend)] -->|Submit| B[Express.js Backend]
-  B --> C[Request Parsing & Validation]
-  C --> D[Geo-IP Lookup & Device Parsing]
-  D --> E[MongoDB - KeystrokeLog Collection]
-  E --> F[Admin Panel / Future Analytics Layer]
+flowchart TD
+  %% Frontend
+  A1[User Form] --> A2[Keystroke Logger]
+  A2 --> A3[Send via Fetch API]
 
-🛠️ Tech Stack
-| Layer        | Technology                |
-| ------------ | ------------------------- |
-| Frontend     | HTML, CSS, Vanilla JS     |
-| Backend      | Node.js, Express.js       |
-| Database     | MongoDB                   |
-| Location API | geoip-lite (local lookup) |
-| Device Info  | useragent                 |
-| IP Resolver  | request-ip                |
-| Security     | express-rate-limit        |
+  %% Backend
+  A3 --> B1[Express.js Server]
+  B1 --> B2[Keystroke Formatter]
+  B2 --> B3[User-Agent Parser]
+  B3 --> B4[GeoIP Lookup]
+  B4 --> B5[Save to MongoDB]
+
+  %% Database
+  B5 --> C1[KeystrokeLog Collection]
+
+  subgraph Database [MongoDB]
+    I[KeystrokeLog Collection]
+    H --> I
+  end
 
