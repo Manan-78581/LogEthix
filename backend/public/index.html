@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LogEthix | Secure Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Logo -->
+    <img src="logo/LogEthix-logo.png" alt="LogEthix Logo" class="logo" />
+
+    <!-- Header -->
+    <h2>Welcome to LogEthix</h2>
+
+    <!-- Login Form -->
+    <form id="login-form" autocomplete="off">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          required 
+          placeholder="Enter your username" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          required 
+          placeholder="Enter your password" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Live Feedback -->
+    <p id="status" class="status-text"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
