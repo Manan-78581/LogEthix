@@ -34,3 +34,15 @@ graph TD
   C --> D[Geo-IP Lookup & Device Parsing]
   D --> E[MongoDB - KeystrokeLog Collection]
   E --> F[Admin Panel / Future Analytics Layer]
+
+🛠️ Tech Stack
+| Layer        | Technology                |
+| ------------ | ------------------------- |
+| Frontend     | HTML, CSS, Vanilla JS     |
+| Backend      | Node.js, Express.js       |
+| Database     | MongoDB                   |
+| Location API | geoip-lite (local lookup) |
+| Device Info  | useragent                 |
+| IP Resolver  | request-ip                |
+| Security     | express-rate-limit        |
+
